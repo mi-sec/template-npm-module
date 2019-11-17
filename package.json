@@ -1,0 +1,35 @@
+{
+	"name": "template-npm-module",
+	"version": "1.0.0",
+	"description": "Template NPM Module",
+	"main": "index.js",
+	"directories": {
+		"test": "test"
+	},
+	"scripts": {
+		"clean": "npm outdated && npm prune",
+		"docs": "jsdoc -c jsdocs.js -r",
+		"lint": "eslint .",
+		"test": "mocha --trace-warnings"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/mi-sec/template-npm-module.git"
+	},
+	"keywords": [
+		"template",
+		"npm",
+		"module"
+	],
+	"author": "MI-SEC",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/mi-sec/template-npm-module/issues"
+	},
+	"homepage": "https://github.com/mi-sec/template-npm-module#readme",
+	"devDependencies": {
+		"chai": "4.2.0",
+		"eslint": "6.6.0",
+		"mocha": "6.2.2"
+	}
+}
