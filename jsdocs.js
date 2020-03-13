@@ -1,6 +1,6 @@
 /** ****************************************************************************************************
  * File: jsdocs.js
- * Project: lightmap
+ * Project: template-npm-module
  * @author Nick Soggin <iSkore@users.noreply.github.com> on 30-May-2018
  *******************************************************************************************************/
 'use strict';
@@ -16,7 +16,8 @@ module.exports = {
             './'
         ],
         exclude: [
-            'node_modules'
+            'node_modules',
+            'docs'
         ],
         includePattern: '.+\\.js(doc|x)?$',
         excludePattern: '(^|\\/|\\\\)_'
@@ -36,6 +37,7 @@ module.exports = {
     opts: {
         encoding: 'utf8',
         destination: 'docs/',
-        recurse: true
+        recurse: true,
+        template: './node_modules/postman-jsdoc-theme'
     }
 };
