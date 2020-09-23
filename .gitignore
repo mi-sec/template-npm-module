@@ -498,6 +498,3 @@ paket-files/
 
 # JetBrains Rider
 *.sln.iml
-
-# for this module, I'm going to remove docs folder so downstream modules that use this template don't get it
-docs/

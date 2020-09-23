@@ -4,13 +4,10 @@ module.exports = {
 		node: true
 	},
 
-	extends: [
-		'eslint:recommended'
-	],
+	extends: 'eslint:recommended',
 
 	parserOptions: {
-		parser: 'babel-eslint',
-		ecmaVersion: 2017,
+		ecmaVersion: 2018,
 		sourceType: 'module'
 	},
 
@@ -22,7 +19,7 @@ module.exports = {
 		it: true,
 		JSON: true,
 		console: true,
-		'$': true,
+		$: true,
 		M: true,
 		document: true,
 		location: true,
@@ -41,13 +38,13 @@ module.exports = {
 
 	rules: {
 		indent: [
-			2,
-			4,
+			'error',
+			'tab',
 			{ SwitchCase: 1 }
 		],
-		'linebreak-style': [ 2, 'unix' ],
+		'linebreak-style': [ 'error', 'unix' ],
 		'max-len': [
-			2,
+			'error',
 			{
 				code: 120,
 				tabWidth: 4,
@@ -55,47 +52,48 @@ module.exports = {
 				ignoreRegExpLiterals: true
 			}
 		],
-		'max-depth': [ 1, 5 ],
-		'max-lines': [ 1, 1500 ],
-		'max-params': [ 1, 6 ],
-		'max-statements': [ 1, 30 ],
+		'max-depth': [ 'warn', 5 ],
+		'max-lines': [ 'warn', 1500 ],
+		'max-params': [ 'warn', 6 ],
+		'max-statements': [ 'warn', 30 ],
 		'accessor-pairs': 'off',
+		'arrow-parens': [ 'error', 'always' ],
 		'arrow-spacing': [
-			1,
+			'warn',
 			{
 				before: true,
 				after: true
 			}
 		],
-		'block-spacing': [ 1, 'always' ],
+		'block-spacing': [ 'warn', 'always' ],
 		camelcase: 'off',
-		'comma-dangle': [ 1, 'never' ],
+		'comma-dangle': [ 'warn', 'never' ],
 		'comma-spacing': [
-			1,
+			'warn',
 			{
 				before: false,
 				after: true
 			}
 		],
-		'comma-style': [ 1, 'last' ],
-		'constructor-super': 1,
-		curly: 2,
-		'template-curly-spacing': [ 1, 'always' ],
-		'object-curly-spacing': [ 1, 'always' ],
-		'dot-location': [ 1, 'property' ],
-		'eol-last': 1,
-		eqeqeq: [ 1, 'allow-null' ],
+		'comma-style': [ 'warn', 'last' ],
+		'constructor-super': 'warn',
+		curly: 'error',
+		'template-curly-spacing': [ 'warn', 'always' ],
+		'object-curly-spacing': [ 'warn', 'always' ],
+		'dot-location': [ 'warn', 'property' ],
+		'eol-last': [ 'warn', 'always' ],
+		eqeqeq: [ 'warn', 'allow-null' ],
 		'generator-star-spacing': [
-			1,
+			'warn',
 			{
 				before: true,
 				after: true
 			}
 		],
-		'handle-callback-err': [ 1, '^(err|error)$' ],
+		'handle-callback-err': [ 'warn', '^(err|error)$' ],
 		'key-spacing': 'off',
 		'keyword-spacing': [
-			1,
+			'warn',
 			{
 				overrides: {
 					catch: { after: true },
@@ -107,110 +105,112 @@ module.exports = {
 			}
 		],
 		'new-cap': [
-			1,
+			'warn',
 			{
 				newIsCap: true,
 				capIsNew: false
 			}
 		],
-		'new-parens': 1,
-		'no-array-constructor': 1,
-		'no-caller': 1,
+		'new-parens': 'warn',
+		'no-array-constructor': 'warn',
+		'no-caller': 'warn',
 		'no-case-declarations': 'off',
-		'no-class-assign': 1,
-		'no-cond-assign': 1,
-		'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-		'no-const-assign': 1,
-		'no-control-regex': 1,
-		'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-		'no-delete-var': 1,
-		'no-dupe-args': 1,
-		'no-dupe-class-members': 1,
-		'no-dupe-keys': 1,
-		'no-duplicate-case': 1,
-		'no-duplicate-imports': 1,
-		'no-empty-character-class': 1,
-		'no-empty-pattern': 1,
-		'no-eval': 1,
-		'no-ex-assign': 1,
-		'no-extend-native': 1,
-		'no-extra-bind': 1,
+		'no-class-assign': 'warn',
+		'no-cond-assign': 'warn',
+		'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+		'no-const-assign': 'warn',
+		'no-control-regex': 'warn',
+		'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+		'no-delete-var': 'warn',
+		'no-dupe-args': 'warn',
+		'no-dupe-class-members': 'warn',
+		'no-dupe-keys': 'warn',
+		'no-duplicate-case': 'warn',
+		'no-duplicate-imports': 'warn',
+		'no-empty-character-class': 'warn',
+		'no-empty-pattern': 'warn',
+		'no-eval': 'warn',
+		'no-ex-assign': 'warn',
+		'no-extend-native': 'warn',
+		'no-extra-bind': 'warn',
 		'no-extra-boolean-cast': 'off',
-		'no-extra-parens': [ 1, 'functions' ],
-		'no-fallthrough': 1,
-		'no-floating-decimal': 1,
-		'no-func-assign': 1,
-		'no-implied-eval': 1,
-		'no-inner-declarations': [ 1, 'functions' ],
+		'no-extra-parens': [ 'warn', 'functions' ],
+		'no-fallthrough': 'warn',
+		'no-floating-decimal': 'warn',
+		'no-func-assign': 'warn',
+		'no-implied-eval': 'warn',
+		'no-inner-declarations': [ 'warn', 'functions' ],
 		'no-trailing-spaces': 'off',
-		'no-invalid-regexp': 1,
-		'no-irregular-whitespace': 1,
-		'no-iterator': 1,
-		'no-label-var': 1,
+		'no-invalid-regexp': 'warn',
+		'no-irregular-whitespace': 'warn',
+		'no-iterator': 'warn',
+		'no-label-var': 'warn',
 		'no-labels': [
-			1,
+			'warn',
 			{
 				allowLoop: false,
 				allowSwitch: false
 			}
 		],
-		'no-lone-blocks': 1,
-		'no-mixed-spaces-and-tabs': 1,
+		'no-lone-blocks': 'warn',
+		'no-mixed-spaces-and-tabs': 'warn',
 		'no-multi-spaces': 'off',
-		'no-multi-str': 1,
-		'no-multiple-empty-lines': [ 1, { max: 4 } ],
-		'no-native-reassign': 1,
-		'no-negated-in-lhs': 1,
-		'no-new': 1,
-		'no-new-func': 1,
-		'no-new-object': 1,
-		'no-new-require': 1,
-		'no-new-symbol': 1,
-		'no-new-wrappers': 1,
-		'no-obj-calls': 1,
-		'no-octal': 1,
-		'no-octal-escape': 1,
-		'no-path-concat': 1,
-		'no-proto': 1,
-		'no-redeclare': 1,
-		'no-regex-spaces': 1,
+		'no-multi-str': 'warn',
+		'no-multiple-empty-lines': [ 'warn', { max: 4 } ],
+		'no-native-reassign': 'warn',
+		'no-negated-in-lhs': 'warn',
+		'no-new': 'warn',
+		'no-new-func': 'warn',
+		'no-new-object': 'warn',
+		'no-new-require': 'warn',
+		'no-new-symbol': 'warn',
+		'no-new-wrappers': 'warn',
+		'no-obj-calls': 'warn',
+		'no-octal': 'warn',
+		'no-octal-escape': 'warn',
+		'no-path-concat': 'warn',
+		'no-proto': 'warn',
+		// TODO:: no-prototype-builtins might be a bit dangerous to keep off. Come back to this later.
+		'no-prototype-builtins': 0,
+		'no-redeclare': 'warn',
+		'no-regex-spaces': 'warn',
 		'no-return-assign': 'off',
-		'no-self-assign': 1,
+		'no-self-assign': 'warn',
 		'no-self-compare': 0,
 		'no-sequences': 'off',
-		'no-shadow-restricted-names': 1,
-		'no-spaced-func': 1,
-		'no-sparse-arrays': 1,
-		'no-this-before-super': 1,
-		'no-throw-literal': 1,
-		'no-undef': 2,
-		'no-undef-init': 1,
-		'no-unexpected-multiline': 1,
-		'no-unmodified-loop-condition': 1,
+		'no-shadow-restricted-names': 'warn',
+		'no-spaced-func': 'warn',
+		'no-sparse-arrays': 'warn',
+		'no-this-before-super': 'warn',
+		'no-throw-literal': 'warn',
+		'no-undef': 'error',
+		'no-undef-init': 'warn',
+		'no-unexpected-multiline': 'warn',
+		'no-unmodified-loop-condition': 'warn',
 		'no-unneeded-ternary': [
-			1,
+			'warn',
 			{
 				defaultAssignment: false
 			}
 		],
-		'no-unreachable': 1,
-		'no-unsafe-finally': 1,
+		'no-unreachable': 'warn',
+		'no-unsafe-finally': 'warn',
 		'no-unused-vars': [
-			1,
+			'warn',
 			{
 				vars: 'local',
 				args: 'after-used'
 			}
 		],
-		'no-useless-call': 1,
-		'no-useless-computed-key': 1,
-		'no-useless-constructor': 1,
-		'no-useless-escape': 1,
-		'no-whitespace-before-property': 1,
-		'no-with': 1,
-		'one-var': [ 1, { 'var': 'always' } ],
+		'no-useless-call': 'warn',
+		'no-useless-computed-key': 'warn',
+		'no-useless-constructor': 'warn',
+		'no-useless-escape': 'warn',
+		'no-whitespace-before-property': 'warn',
+		'no-with': 'warn',
+		'one-var': [ 'warn', { var: 'always' } ],
 		'operator-linebreak': [
-			1,
+			'warn',
 			'after',
 			{
 				overrides: {
@@ -220,7 +220,13 @@ module.exports = {
 			}
 		],
 		'padded-blocks': 'off',
-		quotes: 'off',
+		'prefer-const': 'warn',
+		quotes: [
+			'warn',
+			'single'
+		],
+		// TODO: look into this rule. Difficult to use express session with this as an error
+		'require-atomic-updates': 'warn',
 		'require-jsdoc': [
 			0,
 			{
@@ -231,32 +237,34 @@ module.exports = {
 				}
 			}
 		],
-		semi: [ 2, 'always' ],
-		'semi-style': [ 2, 'last' ],
+		semi: [ 'error', 'always' ],
+		'semi-style': [ 'error', 'last' ],
 		'semi-spacing': [
-			1,
+			'warn',
 			{
 				before: false,
 				after: true
 			}
 		],
-		'space-before-blocks': [ 1, 'always' ],
-		'space-before-function-paren': [ 1, {
-			anonymous: 'never',
-			named: 'never',
-			asyncArrow: 'always'
-		} ],
-		'space-in-parens': [ 1, 'always' ],
-		'space-infix-ops': 1,
+		'space-before-blocks': [ 'warn', 'always' ],
+		'space-before-function-paren': [
+			'warn', {
+				anonymous: 'never',
+				named: 'never',
+				asyncArrow: 'always'
+			}
+		],
+		'space-in-parens': [ 'warn', 'always' ],
+		'space-infix-ops': 'warn',
 		'space-unary-ops': [
-			1,
+			'warn',
 			{
 				words: true,
 				nonwords: false
 			}
 		],
 		'spaced-comment': [
-			1,
+			'warn',
 			'always',
 			{
 				markers: [
@@ -270,28 +278,12 @@ module.exports = {
 				]
 			}
 		],
-		'use-isnan': 1,
-		'valid-jsdoc': [ 1, { requireReturn: false } ],
-		'valid-typeof': 1,
-		'wrap-iife': [ 1, 'any' ],
-		'yield-star-spacing': [ 1, 'both' ],
-		yoda: [ 1, 'never' ],
-		'max-statements-per-line': [ 1, { max: 2 } ]
-	},
-
-	overrides: [
-		{
-			files: [ '*.vue' ],
-			rules: {
-				'indent': 'off',
-				'vue/script-indent': [
-					'warn',
-					'tab',
-					{ baseIndent: 1 }
-				]
-			}
-		}
-	],
-
-	root: true
+		'use-isnan': 'warn',
+		'valid-jsdoc': [ 'warn', { requireReturn: false } ],
+		'valid-typeof': 'warn',
+		'wrap-iife': [ 'warn', 'any' ],
+		'yield-star-spacing': [ 'warn', 'both' ],
+		yoda: [ 'warn', 'never' ],
+		'max-statements-per-line': [ 'warn', { 'max': 2 } ]
+	}
 };
