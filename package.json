@@ -40,6 +40,7 @@
         "chai": "*",
         "eslint": "*",
         "gen-esm-wrapper": "*",
+        "jsdoc": "*",
         "mocha": "*",
         "nyc": "*",
         "postman-jsdoc-theme": "*"
